@@ -22,6 +22,9 @@ public class EngineNodeCommand {
     @NotBlank
     private String nodeCode;
 
+    @NotBlank
+    private String nodeRelease;
+
     @Size(min = 1, max = 10)
     List<String> engineNodes;
 

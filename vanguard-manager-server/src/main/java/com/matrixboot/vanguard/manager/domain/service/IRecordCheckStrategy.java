@@ -10,6 +10,12 @@ package com.matrixboot.vanguard.manager.domain.service;
 @FunctionalInterface
 public interface IRecordCheckStrategy {
 
+    /**
+     * 判断是否备案
+     *
+     * @param domain 域名
+     * @return boolean
+     */
     boolean isRecord(String domain);
 
 }

@@ -16,8 +16,14 @@ import java.util.List;
  * @version 0.0.1
  */
 @FunctionalInterface
-public interface IRegionPickStrategy {
+public interface INodePickStrategy {
 
+    /**
+     * 找出一些节点
+     *
+     * @param command 命令
+     * @return List
+     */
     List<EngineNodeEntity> pickSomeNodes(WebsiteInfoSyncCommand command);
 
 }

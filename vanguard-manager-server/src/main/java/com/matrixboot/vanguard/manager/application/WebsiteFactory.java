@@ -1,8 +1,8 @@
 package com.matrixboot.vanguard.manager.application;
 
 
-import com.matrixboot.vanguard.manager.domain.WebsiteStatusEnum;
 import com.matrixboot.vanguard.manager.domain.entity.WebsiteInfoEntity;
+import com.matrixboot.vanguard.manager.domain.value.WebsiteStatusEnum;
 import com.matrixboot.vanguard.manager.interfaces.dto.WebsiteAddCommand;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;

@@ -1,8 +1,9 @@
-package com.matrixboot.vanguard.manager.domain.service;
+package com.matrixboot.vanguard.manager.infrastructure.ext.sync;
 
 
 import com.matrixboot.vanguard.manager.domain.entity.EngineNodeEntity;
 import com.matrixboot.vanguard.manager.domain.repository.IWebsiteRepository;
+import com.matrixboot.vanguard.manager.domain.service.IWebsiteInfoSyncStrategy;
 import com.matrixboot.vanguard.manager.interfaces.dto.WebsiteInfoSyncCommand;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +30,7 @@ public class WebsiteInfoSyncCommandPersistence implements IWebsiteInfoSyncStrate
 
     @Override
     public void sync(@NotNull WebsiteInfoSyncCommand command, @NotNull List<EngineNodeEntity> nodeList) {
-        repository.findById(command.getId()).ifPresent(entity -> nodeList.forEach(one -> one.addWebsiteInfo(entity)));
+        repository.findById(command.getId()).ifPresent(entity ->
+                nodeList.forEach(one -> one.addWebsiteInfo(entity)));
     }
 }

@@ -9,6 +9,7 @@ Content-Type: application/json
 {
   "nodeName": "name01",
   "nodeCode": "code01",
+  "nodeRelease": "ReleaseV1",
   "engineNodes": [
     "127.0.0.1",
     "192.168.1.2"

@@ -3,9 +3,9 @@ package com.matrixboot.vanguard.manager.domain.entity;
 
 import cn.hutool.crypto.SecureUtil;
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.matrixboot.vanguard.manager.domain.WebsiteStatusEnum;
 import com.matrixboot.vanguard.manager.domain.repository.IWebsiteRepository;
 import com.matrixboot.vanguard.manager.domain.service.IRecordCheckStrategy;
+import com.matrixboot.vanguard.manager.domain.value.WebsiteStatusEnum;
 import com.matrixboot.vanguard.manager.infrastructure.conveter.ListConverter;
 import com.matrixboot.vanguard.manager.infrastructure.exception.WebsiteDomainNameExistedException;
 import com.matrixboot.vanguard.manager.infrastructure.exception.WebsiteNotRecordedException;
@@ -53,7 +53,7 @@ import java.util.List;
 @DynamicInsert
 @DynamicUpdate
 @Entity
-public class WebsiteInfoEntity implements Serializable {
+public class WebsiteInfoEntity implements IWebsiteInfo, Serializable {
 
     private static final long serialVersionUID = -5116915243005098872L;
 
@@ -117,9 +117,7 @@ public class WebsiteInfoEntity implements Serializable {
     @DomainEvents
     public WebsiteInfoSyncCommand domainEvents() {
         log.info("domainEvents");
-        return WebsiteInfoSyncCommand.builder()
-                .id(id)
-                .build();
+        return WebsiteInfoSyncCommand.builder().id(id).build();
     }
 
     @AfterDomainEventPublication

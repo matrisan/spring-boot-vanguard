@@ -1,7 +1,7 @@
 package com.matrixboot.vanguard.manager.application.service;
 
 
-import com.matrixboot.vanguard.manager.domain.service.IRegionPickStrategy;
+import com.matrixboot.vanguard.manager.domain.service.INodePickStrategy;
 import com.matrixboot.vanguard.manager.domain.service.IWebsiteInfoSyncStrategy;
 import com.matrixboot.vanguard.manager.interfaces.dto.WebsiteInfoSyncCommand;
 import lombok.AllArgsConstructor;
@@ -29,11 +29,16 @@ import java.util.List;
 @AllArgsConstructor
 public class WebsiteInfoSyncService implements InitializingBean {
 
-    private final IRegionPickStrategy service;
+    private final INodePickStrategy service;
 
     private final List<IWebsiteInfoSyncStrategy> list;
 
-    @Transactional(rollbackFor = Exception.class, propagation = Propagation.NESTED)
+    /**
+     * 网站信息同步
+     *
+     * @param command 配置同步命令
+     */
+    @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
     public void websiteInfoSync(@Valid WebsiteInfoSyncCommand command) {
         list.forEach(one -> one.sync(command, service.pickSomeNodes(command)));
     }

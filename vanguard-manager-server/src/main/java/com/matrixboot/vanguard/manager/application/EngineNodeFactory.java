@@ -22,6 +22,7 @@ public class EngineNodeFactory {
         return EngineNodeEntity.builder()
                 .nodeName(command.getNodeName())
                 .nodeCode(command.getNodeCode())
+                .nodeRelease(command.getNodeRelease())
                 .engineNodes(command.getEngineNodes())
                 .build();
     }

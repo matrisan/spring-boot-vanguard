@@ -18,6 +18,12 @@ import java.util.List;
 @FunctionalInterface
 public interface IWebsiteInfoSyncStrategy {
 
+    /**
+     * 同步
+     *
+     * @param command  同步网站命令
+     * @param nodeList 引擎节点
+     */
     void sync(WebsiteInfoSyncCommand command, List<EngineNodeEntity> nodeList);
 
 }

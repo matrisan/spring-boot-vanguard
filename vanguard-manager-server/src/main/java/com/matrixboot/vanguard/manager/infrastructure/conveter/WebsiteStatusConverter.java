@@ -1,6 +1,6 @@
 package com.matrixboot.vanguard.manager.infrastructure.conveter;
 
-import com.matrixboot.vanguard.manager.domain.WebsiteStatusEnum;
+import com.matrixboot.vanguard.manager.domain.value.WebsiteStatusEnum;
 import lombok.RequiredArgsConstructor;
 import org.jetbrains.annotations.NotNull;
 

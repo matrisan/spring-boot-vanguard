@@ -20,7 +20,7 @@ public class EngineNodeCommand {
     private String nodeName;
 
     @NotBlank
-    private String nodestatus;
+    private String nodeCode;
 
     @Size(min = 1, max = 10)
     List<String> engineNodes;

@@ -64,14 +64,14 @@ public class EngineNodeEntity implements Serializable {
     @Column(name = "node_name", nullable = false, columnDefinition = "VARCHAR(20) COMMENT 'node name'")
     private String nodeName;
 
-    @Column(name = "node_status", nullable = false, columnDefinition = "VARCHAR(20) COMMENT 'node status'")
-    private String nodestatus;
+    @Column(name = "node_code", nullable = false, columnDefinition = "VARCHAR(20) COMMENT 'node code'")
+    private String nodeCode;
 
     /**
      * 引擎的地址
      */
     @Convert(converter = ListConverter.class)
-    @Column(name = "engine_nodes", nullable = false, columnDefinition = "VARCHAR(20) COMMENT 'engine nodes'")
+    @Column(name = "engine_nodes", nullable = false, columnDefinition = "VARCHAR(100) COMMENT 'engine nodes'")
     private List<String> engineNodes;
 
     /**

@@ -11,6 +11,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -29,19 +30,11 @@ public class EngineNodeManagerFacade {
 
     @GetMapping("/engines")
     public ResultVO<Page<IEngineNodeVO>> findAll(@PageableDefault Pageable pageable) {
-//        return new ResultVO<>(200, service.findAll(pageable));
-        return new ResultVO<>();
+        return new ResultVO<>(200, service.findAll(pageable));
     }
-
-    @GetMapping("/test")
-    public ResultVO<String> findAll() {
-//        return new ResultVO<>(200, service.findAll(pageable));
-        return new ResultVO<>();
-    }
-
 
     @PostMapping("/engine")
-    public ResultVO<String> addEngineNode(EngineNodeCommand command) {
+    public ResultVO<String> addEngineNode(@RequestBody EngineNodeCommand command) {
         service.addEngineNode(command);
         return new ResultVO<>();
     }

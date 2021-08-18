@@ -2,3 +2,18 @@ GET http://localhost:8087/engines
 Accept: application/json
 
 ###
+
+POST http://localhost:8087/engine
+Content-Type: application/json
+
+{
+  "nodeName": "name01",
+  "nodeCode": "code01",
+  "engineNodes": [
+    "127.0.0.1",
+    "192.168.1.2"
+  ]
+}
+
+###
+

@@ -66,4 +66,16 @@ public class ResultVO<T> implements Serializable {
 //        return ResultVO.<T>builder().status(500).message("执行失败").data(data).build();
 //    }
 
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public T getData() {
+        return data;
+    }
 }

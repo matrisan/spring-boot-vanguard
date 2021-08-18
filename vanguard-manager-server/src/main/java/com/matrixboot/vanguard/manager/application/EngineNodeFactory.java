@@ -21,7 +21,7 @@ public class EngineNodeFactory {
     public static EngineNodeEntity from(@NotNull EngineNodeCommand command) {
         return EngineNodeEntity.builder()
                 .nodeName(command.getNodeName())
-                .nodestatus(command.getNodestatus())
+                .nodeCode(command.getNodeCode())
                 .engineNodes(command.getEngineNodes())
                 .build();
     }

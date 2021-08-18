@@ -1,0 +1,6 @@
+都是在调用 BeanFactoryPostProcessor 完成: invokeBeanFactoryPostProcessors(beanFactory);
+
+BeanDefinitionRegistry 从哪些地方读取 Bean
+ImportBeanDefinitionRegistrar 哪些 Class 的定义要加入到 Spring 容器
+BeanDefinitionRegistryPostProcessor 自定义一些 Bean 定义要加入 Spring 容器
+

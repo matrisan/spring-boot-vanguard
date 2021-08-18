@@ -1,0 +1,6 @@
+rootProject.name = 'spring-boot-cmcc-vanguard'
+include 'vanguard-manager-server'
+include 'vanguard-engine-server'
+include 'vanguard-common'
+include 'vanguard-engine-agent'
+
